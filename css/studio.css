@@ -1,0 +1,168 @@
+#studio {
+    padding: 180px 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #07070b,
+            #050507
+        );
+}
+
+.studio-heading {
+    margin-top: 80px;
+}
+
+.studio-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.3fr
+        0.7fr;
+
+    gap: 120px;
+
+    margin-top: 100px;
+}
+
+.studio-large-text {
+    max-width: 700px;
+
+    margin-bottom: 40px;
+
+    font-size:
+        clamp(
+            32px,
+            4vw,
+            62px
+        );
+
+    line-height: 1.05;
+
+    letter-spacing: -0.05em;
+}
+
+.studio-story > p:not(.studio-large-text) {
+    max-width: 600px;
+
+    margin-bottom: 22px;
+
+    color: var(--text-soft);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+.studio-values {
+    border-top: 1px solid var(--line);
+}
+
+.studio-value {
+    padding: 25px 0;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.studio-value span {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: var(--accent-2);
+
+    font-size: 10px;
+
+    letter-spacing: 0.15em;
+}
+
+.studio-value strong {
+    display: block;
+
+    font-size: 18px;
+
+    letter-spacing: -0.02em;
+}
+
+.studio-value p {
+    margin-top: 10px;
+
+    color: var(--text-muted);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+.founder-block {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-top: 130px;
+
+    padding: 35px;
+
+    border: 1px solid var(--line);
+
+    border-radius: var(--radius);
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(255,255,255,0.055),
+            rgba(255,255,255,0.015)
+        );
+}
+
+.founder-avatar {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 90px;
+    height: 90px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--accent),
+            var(--accent-2)
+        );
+
+    color: white;
+
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.founder-role {
+    color: var(--text-muted);
+
+    font-size: 10px;
+
+    letter-spacing: 0.15em;
+}
+
+.founder-block h3 {
+    margin-top: 7px;
+
+    font-size: 30px;
+
+    letter-spacing: -0.04em;
+}
+
+.founder-block p {
+    margin-top: 7px;
+
+    color: var(--text-soft);
+
+    font-size: 13px;
+}

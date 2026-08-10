@@ -1,0 +1,247 @@
+#experiences {
+    padding: 180px 0;
+
+    min-height: 900px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 70% 50%,
+            rgba(139,124,255,0.1),
+            transparent 35%
+        );
+}
+
+.experience-world {
+    display: grid;
+
+    grid-template-columns:
+        0.8fr
+        1.2fr;
+
+    align-items: center;
+
+    gap: 80px;
+
+    margin-top: 100px;
+}
+
+.experience-copy h2 {
+    max-width: 650px;
+
+    margin-top: 25px;
+
+    font-size:
+        clamp(
+            55px,
+            7vw,
+            115px
+        );
+
+    line-height: 0.86;
+
+    letter-spacing: -0.07em;
+}
+
+.experience-copy h2 span {
+    color: transparent;
+
+    -webkit-text-stroke:
+        1px rgba(255,255,255,0.35);
+}
+
+.experience-copy > p:last-child {
+    max-width: 420px;
+
+    margin-top: 30px;
+
+    color: var(--text-soft);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+.experience-visual {
+    position: relative;
+
+    width: min(45vw, 600px);
+
+    aspect-ratio: 1;
+
+    margin-left: auto;
+}
+
+.experience-core {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 110px;
+    height: 110px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            #ffffff,
+            #9b8dff 15%,
+            #30265d 55%,
+            #08080d 75%
+        );
+
+    box-shadow:
+        0 0 60px rgba(139,124,255,0.35),
+        0 0 150px rgba(79,220,255,0.12);
+
+    animation:
+        coreFloat 5s ease-in-out infinite;
+
+    z-index: 5;
+}
+
+.experience-core span {
+    font-size: 30px;
+
+    font-weight: 700;
+
+    color: white;
+}
+
+.experience-ring {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%);
+}
+
+.ring-a {
+    width: 35%;
+    height: 80%;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(30deg);
+
+    animation:
+        ringRotate 12s linear infinite;
+}
+
+.ring-b {
+    width: 65%;
+    height: 65%;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(-25deg);
+
+    border-color:
+        rgba(79,220,255,0.15);
+
+    animation:
+        ringRotateReverse 16s linear infinite;
+}
+
+.ring-c {
+    width: 90%;
+    height: 40%;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(12deg);
+
+    border-color:
+        rgba(139,124,255,0.13);
+
+    animation:
+        ringRotate 20s linear infinite;
+}
+
+.experience-dot {
+    position: absolute;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+        0 0 20px rgba(255,255,255,0.8);
+}
+
+.dot-a {
+    top: 12%;
+    left: 45%;
+}
+
+.dot-b {
+    right: 10%;
+    top: 48%;
+}
+
+.dot-c {
+    bottom: 15%;
+    left: 20%;
+}
+
+@keyframes coreFloat {
+    0%,
+    100% {
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate(-50%, -56%)
+            scale(1.05);
+    }
+}
+
+@keyframes ringRotate {
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(30deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(390deg);
+    }
+}
+
+@keyframes ringRotateReverse {
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(-25deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(-385deg);
+    }
+}

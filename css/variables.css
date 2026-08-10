@@ -1,0 +1,24 @@
+:root {
+    --bg: #050507;
+    --bg-soft: #0a0a0f;
+    --surface: rgba(255, 255, 255, 0.055);
+    --surface-strong: rgba(255, 255, 255, 0.09);
+
+    --text: #f5f5f7;
+    --text-soft: #a4a4ad;
+    --text-muted: #666670;
+
+    --line: rgba(255, 255, 255, 0.1);
+    --line-strong: rgba(255, 255, 255, 0.18);
+
+    --accent: #8b7cff;
+    --accent-2: #4fdcff;
+    --accent-3: #b78cff;
+
+    --max-width: 1400px;
+
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-soft: cubic-bezier(0.16, 1, 0.3, 1);
+
+    --radius: 28px;
+}

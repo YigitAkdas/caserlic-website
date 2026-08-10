@@ -1,0 +1,207 @@
+@media (max-width: 900px) {
+
+    .section-shell,
+    .hero-content,
+    .contact-content {
+        width: min(
+            calc(100% - 40px),
+            var(--max-width)
+        );
+    }
+
+    #navbar {
+        padding: 12px 15px;
+    }
+
+    .nav-inner {
+        grid-template-columns: 1fr auto;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero-section {
+        min-height: 100svh;
+    }
+
+    .hero-content {
+        padding-top: 130px;
+    }
+
+    .hero-universe {
+        width: 100vw;
+
+        right: -30vw;
+        top: 60%;
+
+        opacity: 0.55;
+    }
+
+    .hero-title {
+        font-size:
+            clamp(
+                58px,
+                15vw,
+                100px
+            );
+    }
+
+    .hero-description {
+        max-width: 360px;
+    }
+
+    .about-layout,
+    .studio-grid {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card:nth-child(2) {
+        margin-top: 0;
+    }
+
+    .project-card {
+        min-height: 560px;
+    }
+
+    .software-stage {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-world {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .section-shell,
+    .hero-content,
+    .contact-content {
+        width: calc(100% - 30px);
+    }
+
+    .nav-contact {
+        display: none;
+    }
+
+    .nav-inner {
+        padding: 10px 15px;
+    }
+
+    .hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    .button-primary,
+    .button-secondary {
+        width: 100%;
+    }
+
+    .hero-universe {
+        right: -45vw;
+        top: 65%;
+
+        width: 130vw;
+
+        opacity: 0.42;
+    }
+
+    .hero-scroll {
+        display: none;
+    }
+
+    #about,
+    #games,
+    #studio {
+        padding-top: 110px;
+        padding-bottom: 110px;
+    }
+
+    .about-heading,
+    .projects-heading,
+    .software-heading,
+    .studio-heading {
+        margin-top: 55px;
+    }
+
+    .about-layout {
+        margin-top: 65px;
+    }
+
+    .about-marquee {
+        margin-top: 100px;
+    }
+
+    .project-card {
+        min-height: 500px;
+
+        border-radius: 20px;
+    }
+
+    .project-info {
+        left: 22px;
+        right: 22px;
+        bottom: 90px;
+
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .project-description {
+        left: 22px;
+        right: 22px;
+        bottom: 25px;
+    }
+
+    .founder-block {
+        align-items: flex-start;
+        flex-direction: column;
+
+        margin-top: 80px;
+
+        padding: 25px;
+    }
+
+    #contact {
+        min-height: 700px;
+    }
+
+    .contact-content h2 {
+        font-size: 20vw;
+    }
+
+    .contact-button {
+        margin-top: 40px;
+    }
+
+    footer {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
+}

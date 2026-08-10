@@ -1,0 +1,155 @@
+#contact {
+    min-height: 850px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(113, 91, 255, 0.16),
+            transparent 38%
+        ),
+        #07070b;
+}
+
+.contact-background {
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+}
+
+.contact-background::before,
+.contact-background::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    border: 1px solid rgba(255,255,255,0.06);
+
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+
+    animation:
+        contactOrbit 12s linear infinite;
+}
+
+.contact-background::before {
+    width: 600px;
+    height: 600px;
+}
+
+.contact-background::after {
+    width: 950px;
+    height: 950px;
+
+    animation-direction: reverse;
+
+    animation-duration: 18s;
+}
+
+.contact-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(
+        calc(100% - 80px),
+        var(--max-width)
+    );
+
+    margin: auto;
+}
+
+.contact-content h2 {
+    margin-top: 25px;
+
+    font-size:
+        clamp(
+            70px,
+            11vw,
+            170px
+        );
+
+    line-height: 0.82;
+
+    letter-spacing: -0.08em;
+}
+
+.contact-content h2 span {
+    color: transparent;
+
+    -webkit-text-stroke:
+        1px rgba(255,255,255,0.4);
+}
+
+.contact-content h3 {
+    margin-top: 12px;
+
+    color: var(--text-soft);
+
+    font-size:
+        clamp(
+            28px,
+            4vw,
+            60px
+        );
+
+    letter-spacing: -0.05em;
+}
+
+.contact-button {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    width: min(100%, 500px);
+
+    margin-top: 60px;
+
+    padding: 22px 25px;
+
+    border: 1px solid var(--line);
+
+    border-radius: 999px;
+
+    background:
+        rgba(255,255,255,0.05);
+
+    transition:
+        transform 0.5s var(--ease),
+        background 0.5s ease;
+}
+
+.contact-button:hover {
+    transform: translateY(-5px);
+
+    background:
+        rgba(255,255,255,0.1);
+}
+
+.contact-button span:last-child {
+    font-size: 20px;
+}
+
+@keyframes contactOrbit {
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+}

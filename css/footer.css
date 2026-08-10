@@ -1,0 +1,36 @@
+footer {
+    position: relative;
+
+    z-index: 2;
+
+    padding: 30px 40px;
+
+    border-top: 1px solid var(--line);
+
+    background: var(--bg);
+}
+
+footer::before {
+    content: "CASERLIC";
+
+    display: block;
+
+    margin-bottom: 30px;
+
+    color: rgba(255,255,255,0.025);
+
+    font-size:
+        clamp(
+            100px,
+            18vw,
+            300px
+        );
+
+    font-weight: 700;
+
+    letter-spacing: -0.09em;
+
+    line-height: 0.75;
+
+    white-space: nowrap;
+}
