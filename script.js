@@ -1,131 +1,355 @@
-const orb = document.querySelector(".glass-orb");
+/* =========================================================
+   CASERLIC
+   Interactive Experience
+========================================================= */
 
 
+/* =========================================================
+   REVEAL ANIMATIONS
+========================================================= */
 
-/* Mouse hareket efekti */
-
-document.addEventListener("mousemove",(event)=>{
-
-
-const x = event.clientX / window.innerWidth;
-
-const y = event.clientY / window.innerHeight;
+const revealElements =
+    document.querySelectorAll(".reveal");
 
 
+const revealObserver =
+    new IntersectionObserver(
+        (entries) => {
 
-orb.style.transform = `
+            entries.forEach((entry) => {
 
-translate(
-${x * 25}px,
-${y * 25}px
-)
+                if (entry.isIntersecting) {
 
-`;
+                    entry.target.classList.add("visible");
 
+                    revealObserver.unobserve(entry.target);
 
+                }
 
-});
+            });
 
-
-
-
-
-/* Scroll Animasyon */
-
-const observer = new IntersectionObserver(
-
-(entries)=>{
+        },
+        {
+            threshold: 0.15
+        }
+    );
 
 
-entries.forEach(entry=>{
+revealElements.forEach((element) => {
 
-
-if(entry.isIntersecting){
-
-entry.target.classList.add("show");
-
-
-}
-
+    revealObserver.observe(element);
 
 });
 
 
-},
+/* =========================================================
+   MOUSE PARALLAX
+========================================================= */
 
-{
+const orbs =
+    document.querySelectorAll(".orb");
 
-threshold:0.15
 
-}
+const heroVisual =
+    document.querySelector(".hero-visual");
 
+
+window.addEventListener(
+    "mousemove",
+    (event) => {
+
+        const x =
+            (event.clientX / window.innerWidth - 0.5);
+
+        const y =
+            (event.clientY / window.innerHeight - 0.5);
+
+
+        orbs.forEach((orb, index) => {
+
+            const strength =
+                (index + 1) * 15;
+
+            orb.style.transform =
+                `translate(${x * strength}px, ${y * strength}px)`;
+
+        });
+
+
+        if (heroVisual) {
+
+            heroVisual.style.transform =
+                `
+                translateY(-50%)
+                translate(${x * 18}px, ${y * 18}px)
+                rotateX(${y * -2}deg)
+                rotateY(${x * 2}deg)
+                `;
+
+        }
+
+    }
 );
 
 
+/* =========================================================
+   NAVBAR SCROLL
+========================================================= */
+
+const navbar =
+    document.querySelector(".navbar");
 
 
+let lastScroll =
+    0;
 
-const hiddenElements = document.querySelectorAll(
 
-".card, .project-card, .about-box, .contact-box"
+window.addEventListener(
+    "scroll",
+    () => {
 
+        const currentScroll =
+            window.scrollY;
+
+
+        if (currentScroll > 40) {
+
+            navbar.style.background =
+                "rgba(5,7,12,0.55)";
+
+            navbar.style.borderBottom =
+                "1px solid rgba(255,255,255,0.05)";
+
+        } else {
+
+            navbar.style.background =
+                "transparent";
+
+            navbar.style.borderBottom =
+                "none";
+
+        }
+
+
+        lastScroll =
+            currentScroll;
+
+    },
+    {
+        passive: true
+    }
 );
 
 
+/* =========================================================
+   HERO CORE ANIMATION
+========================================================= */
 
-hiddenElements.forEach((element)=>{
-
-
-element.classList.add("hidden");
-
-
-observer.observe(element);
+const visualCore =
+    document.querySelector(".visual-core");
 
 
-});
+let coreRotation =
+    0;
 
 
+function animateCore() {
 
+    coreRotation += 0.08;
 
+    if (visualCore) {
 
+        visualCore.style.transform =
+            `
+            translate(-50%, -50%)
+            rotate(${coreRotation}deg)
+            `;
 
+    }
 
-/* Navbar scroll efekti */
-
-
-const navbar = document.querySelector(".navbar");
-
-
-
-window.addEventListener("scroll",()=>{
-
-
-if(window.scrollY > 50){
-
-
-navbar.style.background =
-"rgba(255,255,255,0.12)";
-
-
-navbar.style.transform =
-"scale(0.96)";
-
-
-}
-
-else{
-
-
-navbar.style.background =
-"rgba(255,255,255,0.08)";
-
-
-navbar.style.transform =
-"scale(1)";
-
+    requestAnimationFrame(
+        animateCore
+    );
 
 }
 
 
+animateCore();
+
+
+/* =========================================================
+   PROJECT HOVER
+========================================================= */
+
+const projects =
+    document.querySelectorAll(".project");
+
+
+projects.forEach((project) => {
+
+    project.addEventListener(
+        "mousemove",
+        (event) => {
+
+            const rect =
+                project.getBoundingClientRect();
+
+
+            const x =
+                event.clientX - rect.left;
+
+
+            const y =
+                event.clientY - rect.top;
+
+
+            const xPercent =
+                (x / rect.width - 0.5);
+
+
+            const yPercent =
+                (y / rect.height - 0.5);
+
+
+            const visual =
+                project.querySelector(
+                    ".project-visual"
+                );
+
+
+            if (visual) {
+
+                visual.style.transform =
+                    `
+                    translate(
+                        ${xPercent * 12}px,
+                        ${yPercent * 12}px
+                    )
+                    `;
+
+            }
+
+        }
+    );
+
+
+    project.addEventListener(
+        "mouseleave",
+        () => {
+
+            const visual =
+                project.querySelector(
+                    ".project-visual"
+                );
+
+
+            if (visual) {
+
+                visual.style.transform =
+                    "translate(0,0)";
+
+            }
+
+        }
+    );
 
 });
+
+
+/* =========================================================
+   SMOOTH ANCHOR LINKS
+========================================================= */
+
+document
+    .querySelectorAll('a[href^="#"]')
+    .forEach((link) => {
+
+        link.addEventListener(
+            "click",
+            (event) => {
+
+                const targetId =
+                    link.getAttribute("href");
+
+
+                if (
+                    !targetId ||
+                    targetId === "#"
+                ) {
+                    return;
+                }
+
+
+                const target =
+                    document.querySelector(
+                        targetId
+                    );
+
+
+                if (target) {
+
+                    event.preventDefault();
+
+                    target.scrollIntoView({
+                        behavior: "smooth"
+                    });
+
+                }
+
+            }
+        );
+
+    });
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const menuButton =
+    document.querySelector(".menu-button");
+
+
+const navLinks =
+    document.querySelector(".nav-links");
+
+
+if (menuButton) {
+
+    menuButton.addEventListener(
+        "click",
+        () => {
+
+            navLinks.classList.toggle(
+                "mobile-open"
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+========================================================= */
+
+const prefersReducedMotion =
+    window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    );
+
+
+if (prefersReducedMotion.matches) {
+
+    document
+        .querySelectorAll(".reveal")
+        .forEach((element) => {
+
+            element.classList.add(
+                "visible"
+            );
+
+        });
+
+}
