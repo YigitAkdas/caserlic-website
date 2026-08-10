@@ -2,21 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Caserlic — Digital Worlds</title>
-
     <meta
         name="description"
-        content="Caserlic is an independent studio creating games, software and digital experiences."
-    >
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet"
+        content="Caserlic is an independent digital studio building games, software and digital experiences."
     >
 
     <link rel="stylesheet" href="style.css">
@@ -24,444 +15,284 @@
 
 <body>
 
-    <!-- =====================================================
+    <!-- =========================
          BACKGROUND
-    ====================================================== -->
+    ========================== -->
 
-    <div class="site-background" aria-hidden="true">
+    <div class="noise"></div>
 
-        <div class="aurora aurora-a"></div>
-        <div class="aurora aurora-b"></div>
-        <div class="aurora aurora-c"></div>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
 
-        <div class="light-cursor"></div>
-
-        <div class="background-grid"></div>
-
-        <canvas id="particleCanvas"></canvas>
-
-        <div class="noise"></div>
-
-    </div>
+    <div class="cursor-glow"></div>
 
 
-    <!-- =====================================================
+    <!-- =========================
          NAVIGATION
-    ====================================================== -->
+    ========================== -->
 
     <header class="navbar">
 
-        <a href="#" class="brand">
-
-            <span class="brand-symbol">
-                <span></span>
-            </span>
-
-            <span class="brand-name">
-                CASERLIC
-            </span>
-
+        <a href="#top" class="brand">
+            <span class="brand-dot"></span>
+            <span>CASERLIC</span>
         </a>
 
-
-        <nav class="desktop-nav">
-
+        <nav class="nav-links">
             <a href="#work">Work</a>
             <a href="#studio">Studio</a>
             <a href="#contact">Contact</a>
-
         </nav>
-
 
         <a href="#contact" class="nav-cta">
             Let's talk
             <span>↗</span>
         </a>
 
-
-        <button
-            class="mobile-menu-button"
-            aria-label="Open navigation"
-            type="button"
-        >
-            <span></span>
-            <span></span>
-        </button>
-
     </header>
 
 
-    <!-- =====================================================
-         MAIN
-    ====================================================== -->
+    <!-- =========================
+         HERO
+    ========================== -->
 
-    <main>
-
-        <!-- =================================================
-             HERO
-        ================================================== -->
+    <main id="top">
 
         <section class="hero">
 
-            <div class="hero-inner">
+            <div class="hero-content">
 
-
-                <!-- LEFT -->
-                <div class="hero-copy">
-
-                    <div class="eyebrow hero-reveal">
-
-                        <span class="eyebrow-line"></span>
-
-                        <span>
-                            INDEPENDENT DIGITAL STUDIO
-                        </span>
-
-                    </div>
-
-
-                    <h1 class="hero-title">
-
-                        <span class="title-line hero-reveal">
-                            WE CREATE
-                        </span>
-
-                        <span class="title-line gradient-text hero-reveal">
-                            DIGITAL
-                        </span>
-
-                        <span class="title-line outline-text hero-reveal">
-                            WORLDS.
-                        </span>
-
-                    </h1>
-
-
-                    <p class="hero-description hero-reveal">
-
-                        We build games, software and digital
-                        experiences where technology meets
-                        imagination.
-
-                    </p>
-
-
-                    <div class="hero-buttons hero-reveal">
-
-                        <a href="#work" class="primary-button">
-
-                            <span>
-                                Explore our work
-                            </span>
-
-                            <span class="button-arrow">
-                                ↗
-                            </span>
-
-                        </a>
-
-
-                        <a href="#studio" class="text-button">
-
-                            Discover Caserlic
-
-                            <span>
-                                ↓
-                            </span>
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <!-- RIGHT / CORE -->
-                <div class="hero-art" aria-hidden="true">
-
-                    <div class="art-glow"></div>
-
-                    <div class="core">
-
-                        <div class="core-sphere">
-
-                            <div class="sphere-highlight"></div>
-
-                        </div>
-
-
-                        <div class="orbit orbit-1">
-
-                            <span class="orbit-dot"></span>
-
-                        </div>
-
-
-                        <div class="orbit orbit-2">
-
-                            <span class="orbit-dot"></span>
-
-                        </div>
-
-
-                        <div class="orbit orbit-3">
-
-                            <span class="orbit-dot"></span>
-
-                        </div>
-
-
-                        <div class="core-cross">
-
-                            <span></span>
-                            <span></span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="floating-label label-one">
-
-                        <span>01</span>
-                        GAMES
-
-                    </div>
-
-
-                    <div class="floating-label label-two">
-
-                        <span>02</span>
-                        SOFTWARE
-
-                    </div>
-
-
-                    <div class="floating-label label-three">
-
-                        <span>03</span>
-                        EXPERIENCES
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- bottom -->
-            <div class="hero-bottom">
-
-                <span>
-                    SCROLL TO EXPLORE
-                </span>
-
-                <div class="scroll-line">
+                <div class="eyebrow">
                     <span></span>
+                    INDEPENDENT DIGITAL STUDIO
                 </div>
 
-            </div>
+                <h1>
+                    <span>WE CREATE</span>
+                    <span class="gradient-text">DIGITAL</span>
+                    <span class="outline-text">WORLDS.</span>
+                </h1>
 
-        </section>
-
-
-        <!-- =================================================
-             INTRO
-        ================================================== -->
-
-        <section class="statement section" id="studio">
-
-            <div class="section-index">
-                01
-            </div>
-
-
-            <div class="statement-content reveal">
-
-                <p class="section-kicker">
-                    THE STUDIO
+                <p class="hero-description">
+                    We build games, software and digital experiences
+                    where technology meets imagination.
                 </p>
 
+                <div class="hero-actions">
 
-                <h2>
-                    SMALL TEAM.
-                    <span>LIMITLESS CURIOSITY.</span>
-                </h2>
+                    <a href="#work" class="primary-button">
+                        <span>Explore our work</span>
+                        <span class="button-icon">↗</span>
+                    </a>
 
-
-                <div class="statement-bottom">
-
-                    <p>
-                        Caserlic is an independent studio focused on
-                        creating original games, software and digital
-                        products.
-                    </p>
-
-                    <p>
-                        We care about ideas, execution and the tiny
-                        details that make a digital experience feel
-                        alive.
-                    </p>
+                    <a href="#studio" class="text-button">
+                        Discover Caserlic
+                        <span>↓</span>
+                    </a>
 
                 </div>
 
             </div>
 
+
+            <!-- HERO ORBIT -->
+
+            <div class="hero-visual">
+
+                <div class="orbit-system">
+
+                    <div class="orbit orbit-a"></div>
+                    <div class="orbit orbit-b"></div>
+                    <div class="orbit orbit-c"></div>
+
+                    <div class="planet">
+                        <div class="planet-light"></div>
+                    </div>
+
+                    <div class="particle particle-one"></div>
+                    <div class="particle particle-two"></div>
+                    <div class="particle particle-three"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-side-label hero-side-one">
+                <small>01</small>
+                GAMES
+            </div>
+
+            <div class="hero-side-label hero-side-two">
+                <small>02</small>
+                SOFTWARE
+            </div>
+
+            <div class="hero-side-label hero-side-three">
+                <small>03</small>
+                EXPERIENCES
+            </div>
+
+
+            <div class="scroll-indicator">
+                <span>SCROLL TO EXPLORE</span>
+                <i></i>
+            </div>
+
         </section>
 
 
-        <!-- =================================================
+        <!-- =========================
              WORK
-        ================================================== -->
+        ========================== -->
 
         <section class="work section" id="work">
 
-            <div class="section-top">
+            <div class="section-number">01</div>
 
-                <div class="section-index">
-                    02
+            <div class="section-heading reveal">
+
+                <div class="eyebrow">
+                    <span></span>
+                    SELECTED WORK
                 </div>
 
-                <div>
+                <h2>
+                    THINGS<br>
+                    WE <span>BUILD.</span>
+                </h2>
 
-                    <p class="section-kicker">
-                        SELECTED WORK
-                    </p>
-
-                    <h2 class="section-heading">
-                        THINGS WE
-                        <span>ARE BUILDING.</span>
-                    </h2>
-
-                </div>
+                <p>
+                    Projects born from ideas, shaped through technology
+                    and built to become something people remember.
+                </p>
 
             </div>
 
 
-            <div class="project-list">
+            <div class="work-grid">
 
+                <!-- GAME -->
 
-                <!-- PROJECT 01 -->
-
-                <article class="project-card reveal">
-
-                    <div class="project-card-number">
-                        01
-                    </div>
-
-
-                    <div class="project-card-content">
-
-                        <p class="project-type">
-                            GAME DEVELOPMENT
-                        </p>
-
-                        <h3>
-                            Worlds built
-                            <span>to be explored.</span>
-                        </h3>
-
-                        <p class="project-description">
-                            Original interactive experiences
-                            focused on atmosphere, gameplay
-                            and storytelling.
-                        </p>
-
-                        <a href="#" class="project-link">
-
-                            VIEW PROJECT
-
-                            <span>
-                                ↗
-                            </span>
-
-                        </a>
-
-                    </div>
-
+                <article class="project-card project-large reveal">
 
                     <div class="project-art game-art">
 
-                        <div class="game-sun"></div>
+                        <div class="art-grid"></div>
 
-                        <div class="game-ring game-ring-a"></div>
-                        <div class="game-ring game-ring-b"></div>
+                        <div class="art-glow"></div>
 
-                        <div class="game-particle particle-a"></div>
-                        <div class="game-particle particle-b"></div>
-                        <div class="game-particle particle-c"></div>
+                        <div class="floating-ring ring-one"></div>
+                        <div class="floating-ring ring-two"></div>
+
+                        <div class="art-word">
+                            GAME
+                        </div>
+
+                        <span class="art-corner">01 / GAME</span>
+
+                    </div>
+
+                    <div class="project-info">
+
+                        <div>
+                            <span class="project-category">
+                                GAME DEVELOPMENT
+                            </span>
+
+                            <h3>
+                                WORLDS<br>
+                                WORTH ENTERING.
+                            </h3>
+                        </div>
+
+                        <div class="project-meta">
+                            <span>01</span>
+                            <span>IN DEVELOPMENT</span>
+                        </div>
 
                     </div>
 
                 </article>
 
 
-                <!-- PROJECT 02 -->
+                <!-- SOFTWARE -->
 
                 <article class="project-card reveal">
 
-                    <div class="project-card-number">
-                        02
-                    </div>
-
-
-                    <div class="project-card-content">
-
-                        <p class="project-type">
-                            SOFTWARE
-                        </p>
-
-                        <h3>
-                            Useful things.
-                            <span>Beautifully made.</span>
-                        </h3>
-
-                        <p class="project-description">
-                            Digital products designed to solve
-                            real problems without unnecessary
-                            complexity.
-                        </p>
-
-                        <a href="#" class="project-link">
-
-                            COMING SOON
-
-                            <span>
-                                →
-                            </span>
-
-                        </a>
-
-                    </div>
-
-
                     <div class="project-art software-art">
 
-                        <div class="interface-window">
+                        <div class="software-lines"></div>
 
-                            <div class="window-top">
+                        <div class="software-core">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
 
-                                <i></i>
-                                <i></i>
-                                <i></i>
+                        <span class="art-corner">
+                            02 / SOFTWARE
+                        </span>
 
-                            </div>
+                    </div>
 
-                            <div class="interface-content">
+                    <div class="project-info">
 
-                                <div class="interface-sidebar"></div>
+                        <div>
+                            <span class="project-category">
+                                SOFTWARE
+                            </span>
 
-                                <div class="interface-main">
+                            <h3>
+                                TOOLS THAT<br>
+                                SOLVE PROBLEMS.
+                            </h3>
+                        </div>
 
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
+                        <div class="project-meta">
+                            <span>02</span>
+                            <span>BUILDING</span>
+                        </div>
 
-                                </div>
+                    </div>
 
-                            </div>
+                </article>
 
+
+                <!-- EXPERIENCE -->
+
+                <article class="project-card reveal">
+
+                    <div class="project-art experience-art">
+
+                        <div class="experience-orbit"></div>
+
+                        <div class="experience-center">
+                            <span>C</span>
+                        </div>
+
+                        <span class="art-corner">
+                            03 / EXPERIENCE
+                        </span>
+
+                    </div>
+
+                    <div class="project-info">
+
+                        <div>
+                            <span class="project-category">
+                                DIGITAL EXPERIENCES
+                            </span>
+
+                            <h3>
+                                INTERACTIONS<br>
+                                THAT FEEL ALIVE.
+                            </h3>
+                        </div>
+
+                        <div class="project-meta">
+                            <span>03</span>
+                            <span>EXPERIMENTAL</span>
                         </div>
 
                     </div>
@@ -473,83 +304,197 @@
         </section>
 
 
-        <!-- =================================================
-             PHILOSOPHY
-        ================================================== -->
+        <!-- =========================
+             MANIFESTO
+        ========================== -->
 
-        <section class="philosophy section">
+        <section class="manifesto section">
 
-            <div class="section-index">
-                03
-            </div>
+            <div class="section-number">02</div>
 
+            <div class="manifesto-inner reveal">
 
-            <div class="philosophy-content reveal">
-
-                <p class="section-kicker">
-                    OUR PHILOSOPHY
-                </p>
-
+                <div class="eyebrow">
+                    <span></span>
+                    OUR APPROACH
+                </div>
 
                 <h2>
-                    DON'T JUST
-                    <span>MAKE SOMETHING.</span>
+                    WE DON'T JUST<br>
+                    <span>MAKE THINGS.</span>
                 </h2>
 
+                <div class="manifesto-bottom">
 
-                <p class="philosophy-copy">
+                    <p>
+                        We start with an idea, question what already exists
+                        and build until the result feels worth experiencing.
+                    </p>
 
-                    Make something people remember.
+                    <div class="manifesto-mark">
+                        <span>C</span>
+                    </div>
 
-                </p>
+                </div>
 
             </div>
 
         </section>
 
 
-        <!-- =================================================
-             CONTACT
-        ================================================== -->
+        <!-- =========================
+             STUDIO
+        ========================== -->
 
-        <section class="contact section" id="contact">
+        <section class="studio section" id="studio">
 
-            <div class="contact-light"></div>
+            <div class="section-number">03</div>
 
+            <div class="studio-top reveal">
 
-            <div class="section-index">
-                04
+                <div class="eyebrow">
+                    <span></span>
+                    THE STUDIO
+                </div>
+
+                <h2>
+                    SMALL<br>
+                    <span>TEAM.</span><br>
+                    BIG IDEAS.
+                </h2>
+
             </div>
 
 
+            <div class="studio-content">
+
+                <div class="studio-copy reveal">
+
+                    <p class="large-copy">
+                        Caserlic is an independent digital studio focused
+                        on creating games, software and experiences.
+                    </p>
+
+                    <p>
+                        We believe great products don't need enormous teams.
+                        They need clear ideas, attention to detail and the
+                        determination to keep building.
+                    </p>
+
+                </div>
+
+
+                <div class="studio-values reveal">
+
+                    <div class="value">
+                        <span>01</span>
+                        <strong>IMAGINATION</strong>
+                        <p>
+                            Ideas come first. Technology gives them form.
+                        </p>
+                    </div>
+
+                    <div class="value">
+                        <span>02</span>
+                        <strong>CRAFT</strong>
+                        <p>
+                            Every interaction should have a reason.
+                        </p>
+                    </div>
+
+                    <div class="value">
+                        <span>03</span>
+                        <strong>PERSISTENCE</strong>
+                        <p>
+                            We keep building until the idea becomes real.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOUNDER -->
+
+            <div class="founder reveal">
+
+                <div class="founder-line"></div>
+
+                <div class="founder-label">
+                    <span>THE PERSON BEHIND CASERLIC</span>
+                </div>
+
+                <div class="founder-main">
+
+                    <div class="founder-avatar">
+                        C
+                    </div>
+
+                    <div>
+
+                        <span class="founder-role">
+                            FOUNDER / CREATIVE DEVELOPER
+                        </span>
+
+                        <h3>
+                            YİĞİT AKDAŞ
+                        </h3>
+
+                        <p>
+                            Building Caserlic from ideas into digital worlds.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CONTACT
+        ========================== -->
+
+        <section class="contact section" id="contact">
+
+            <div class="section-number">04</div>
+
             <div class="contact-content reveal">
 
-                <p class="section-kicker">
-                    START SOMETHING
-                </p>
-
+                <div class="eyebrow">
+                    <span></span>
+                    GET IN TOUCH
+                </div>
 
                 <h2>
-                    HAVE AN
+                    HAVE AN<br>
                     <span>IDEA?</span>
                 </h2>
 
+                <h3>
+                    LET'S BUILD IT.
+                </h3>
 
-                <a
-                    href="mailto:hello@caserlic.com"
-                    class="contact-button"
-                >
+                <a href="mailto:hello@caserlic.com" class="contact-button">
 
                     <span>
-                        Let's talk
+                        Start a conversation
                     </span>
 
-                    <strong>
+                    <span>
                         ↗
-                    </strong>
+                    </span>
 
                 </a>
 
+            </div>
+
+
+            <div class="contact-orb">
+                <div></div>
             </div>
 
         </section>
@@ -557,23 +502,22 @@
     </main>
 
 
-    <!-- =====================================================
+    <!-- =========================
          FOOTER
-    ====================================================== -->
+    ========================== -->
 
     <footer>
 
         <div class="footer-brand">
+            <span class="brand-dot"></span>
             CASERLIC
         </div>
-
 
         <div class="footer-center">
             GAMES · SOFTWARE · EXPERIENCES
         </div>
 
-
-        <div class="footer-copy">
+        <div class="footer-right">
             © 2026 CASERLIC
         </div>
 
