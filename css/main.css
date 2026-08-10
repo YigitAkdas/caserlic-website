@@ -1,6 +1,15 @@
+/* =========================================================
+   CASERLIC — MAIN
+   Global layout, effects and reusable components
+   ========================================================= */
+
 body {
     position: relative;
 }
+
+/* ---------------------------------------------------------
+   Global noise
+   --------------------------------------------------------- */
 
 #site-noise {
     position: fixed;
@@ -16,6 +25,10 @@ body {
 
     mix-blend-mode: soft-light;
 }
+
+/* ---------------------------------------------------------
+   Cursor glow
+   --------------------------------------------------------- */
 
 #cursor-glow {
     position: fixed;
@@ -50,10 +63,15 @@ body {
 
 #cursor-glow.active {
     opacity: 1;
+
     transform:
         translate(-50%, -50%)
         scale(1);
 }
+
+/* ---------------------------------------------------------
+   Main structure
+   --------------------------------------------------------- */
 
 main {
     position: relative;
@@ -73,6 +91,10 @@ section {
 
     margin: 0 auto;
 }
+
+/* ---------------------------------------------------------
+   Section labels
+   --------------------------------------------------------- */
 
 .section-label {
     display: flex;
@@ -105,6 +127,10 @@ section {
     font-size: 10px;
 }
 
+/* ---------------------------------------------------------
+   Eyebrow
+   --------------------------------------------------------- */
+
 .eyebrow {
     display: flex;
     align-items: center;
@@ -130,6 +156,10 @@ section {
         );
 }
 
+/* ---------------------------------------------------------
+   Scroll reveal
+   --------------------------------------------------------- */
+
 .reveal {
     opacity: 0;
 
@@ -150,6 +180,10 @@ section {
         scale(1);
 }
 
+/* ---------------------------------------------------------
+   Buttons
+   --------------------------------------------------------- */
+
 .button-primary,
 .button-secondary {
     display: inline-flex;
@@ -160,6 +194,7 @@ section {
     gap: 30px;
 
     min-width: 190px;
+
     padding: 15px 18px;
 
     border-radius: 999px;
@@ -167,10 +202,13 @@ section {
     font-size: 12px;
     font-weight: 600;
 
+    text-decoration: none;
+
     transition:
         transform 0.5s var(--ease),
         background 0.5s ease,
-        border-color 0.5s ease;
+        border-color 0.5s ease,
+        box-shadow 0.5s ease;
 }
 
 .button-primary {
@@ -182,6 +220,11 @@ section {
             #f5f5f7,
             #c9c8ff
         );
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    box-shadow:
+        0 10px 35px rgba(139, 124, 255, 0.12);
 }
 
 .button-secondary {
@@ -189,7 +232,8 @@ section {
 
     color: var(--text-soft);
 
-    background: rgba(255, 255, 255, 0.025);
+    background:
+        rgba(255, 255, 255, 0.025);
 }
 
 .button-primary:hover,
@@ -197,7 +241,56 @@ section {
     transform: translateY(-4px);
 }
 
+.button-primary:hover {
+    box-shadow:
+        0 15px 45px rgba(139, 124, 255, 0.2);
+}
+
 .button-secondary:hover {
     border-color: var(--line-strong);
-    background: rgba(255, 255, 255, 0.07);
+
+    background:
+        rgba(255, 255, 255, 0.07);
+}
+
+/* ---------------------------------------------------------
+   Links
+   --------------------------------------------------------- */
+
+a {
+    color: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* ---------------------------------------------------------
+   Selection
+   --------------------------------------------------------- */
+
+::selection {
+    color: #08080a;
+    background: var(--accent);
+}
+
+/* ---------------------------------------------------------
+   Accessibility
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
 }
