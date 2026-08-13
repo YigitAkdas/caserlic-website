@@ -1,13 +1,35 @@
+/* =========================================================
+   GAMES / PROJECTS
+   ========================================================= */
+
 #games {
-    padding: 140px 0 180px;
+    position: relative;
+
+    padding: 160px 0 190px;
+
+    overflow: hidden;
 
     background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(139, 124, 255, 0.055),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(79, 220, 255, 0.035),
+            transparent 30%
+        ),
         linear-gradient(
             180deg,
             var(--bg),
             #08080d
         );
 }
+
+/* ---------------------------------------------------------
+   Heading
+   --------------------------------------------------------- */
 
 .projects-heading {
     margin-top: 80px;
@@ -24,16 +46,24 @@
     line-height: 1.7;
 }
 
+/* ---------------------------------------------------------
+   Grid
+   --------------------------------------------------------- */
+
 .projects-grid {
     display: grid;
 
     grid-template-columns:
         repeat(2, minmax(0, 1fr));
 
-    gap: 22px;
+    gap: 24px;
 
     margin-top: 100px;
 }
+
+/* ---------------------------------------------------------
+   Card
+   --------------------------------------------------------- */
 
 .project-card {
     position: relative;
@@ -50,63 +80,127 @@
 
     cursor: pointer;
 
+    isolation: isolate;
+
     transition:
         transform 0.8s var(--ease),
-        border-color 0.6s ease;
+        border-color 0.6s ease,
+        box-shadow 0.8s ease;
+}
+
+/* Featured project */
+
+.project-card--featured {
+    min-height: 720px;
 }
 
 .project-card:nth-child(2) {
     margin-top: 100px;
 }
 
+/* Hover */
+
 .project-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-12px);
 
     border-color:
-        rgba(160, 145, 255, 0.35);
+        rgba(160, 145, 255, 0.38);
+
+    box-shadow:
+        0 35px 80px rgba(0, 0, 0, 0.35),
+        0 0 80px rgba(139, 124, 255, 0.045);
 }
+
+/* ---------------------------------------------------------
+   Image
+   --------------------------------------------------------- */
 
 .project-image {
     position: absolute;
+
     inset: 0;
 
     overflow: hidden;
+
+    background: #0c0c12;
+}
+
+.project-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(255,255,255,0.04),
+            transparent 35%
+        );
 }
 
 .project-image img {
     width: 100%;
     height: 100%;
 
+    display: block;
+
     object-fit: cover;
 
-    opacity: 0.72;
+    opacity: 0.68;
 
-    transform: scale(1.02);
+    transform: scale(1.025);
+
+    filter:
+        saturate(0.88)
+        contrast(1.04);
 
     transition:
-        transform 1.2s var(--ease),
-        opacity 0.8s ease;
+        transform 1.4s var(--ease),
+        opacity 0.9s ease,
+        filter 1s ease;
 }
 
 .project-card:hover
 .project-image img {
-    transform: scale(1.08);
+    transform: scale(1.09);
 
-    opacity: 0.95;
+    opacity: 0.94;
+
+    filter:
+        saturate(1)
+        contrast(1.05);
 }
+
+/* ---------------------------------------------------------
+   Image overlay
+   --------------------------------------------------------- */
 
 .project-overlay {
     position: absolute;
+
     inset: 0;
+
+    z-index: 3;
 
     background:
         linear-gradient(
             180deg,
-            rgba(0,0,0,0.05),
-            rgba(0,0,0,0.15) 35%,
-            rgba(0,0,0,0.92) 100%
+            rgba(0, 0, 0, 0.04) 0%,
+            rgba(0, 0, 0, 0.08) 30%,
+            rgba(0, 0, 0, 0.35) 52%,
+            rgba(0, 0, 0, 0.94) 100%
         );
 }
+
+/* ---------------------------------------------------------
+   Number
+   --------------------------------------------------------- */
 
 .project-number {
     position: absolute;
@@ -114,34 +208,104 @@
     top: 25px;
     left: 25px;
 
+    z-index: 5;
+
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
 
     border: 1px solid rgba(255,255,255,0.16);
 
     border-radius: 50%;
 
     background:
-        rgba(0,0,0,0.2);
+        rgba(0,0,0,0.18);
 
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
 
     color: white;
 
     font-size: 10px;
+
+    transition:
+        background 0.5s ease,
+        border-color 0.5s ease,
+        transform 0.5s var(--ease);
 }
+
+.project-card:hover .project-number {
+    transform: rotate(8deg);
+
+    border-color:
+        rgba(255,255,255,0.3);
+
+    background:
+        rgba(139,124,255,0.16);
+}
+
+/* ---------------------------------------------------------
+   Open indicator
+   --------------------------------------------------------- */
+
+.project-open {
+    position: absolute;
+
+    top: 25px;
+    right: 25px;
+
+    z-index: 5;
+
+    padding: 9px 12px;
+
+    border: 1px solid rgba(255,255,255,0.13);
+
+    border-radius: 999px;
+
+    background:
+        rgba(0,0,0,0.18);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    color: rgba(255,255,255,0.72);
+
+    font-size: 9px;
+
+    letter-spacing: 0.14em;
+
+    transition:
+        background 0.5s ease,
+        border-color 0.5s ease,
+        color 0.5s ease;
+}
+
+.project-card:hover .project-open {
+    border-color:
+        rgba(255,255,255,0.28);
+
+    background:
+        rgba(255,255,255,0.08);
+
+    color: white;
+}
+
+/* ---------------------------------------------------------
+   Main information
+   --------------------------------------------------------- */
 
 .project-info {
     position: absolute;
 
     left: 30px;
     right: 30px;
-    bottom: 95px;
+    bottom: 120px;
+
+    z-index: 5;
 
     display: flex;
 
@@ -151,9 +315,25 @@
     gap: 20px;
 }
 
+.project-main {
+    min-width: 0;
+}
+
+.project-meta {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 8px;
+}
+
 .project-category,
+.project-year,
 .project-status {
-    color: rgba(255,255,255,0.55);
+    color:
+        rgba(255,255,255,0.56);
 
     font-size: 10px;
 
@@ -162,8 +342,13 @@
     text-transform: uppercase;
 }
 
+.project-year {
+    color:
+        rgba(255,255,255,0.32);
+}
+
 .project-info h3 {
-    margin-top: 8px;
+    margin: 0;
 
     font-size:
         clamp(
@@ -175,7 +360,13 @@
     line-height: 0.95;
 
     letter-spacing: -0.05em;
+
+    color: white;
 }
+
+/* ---------------------------------------------------------
+   Status
+   --------------------------------------------------------- */
 
 .project-status {
     padding: 8px 11px;
@@ -185,27 +376,138 @@
     border-radius: 999px;
 
     white-space: nowrap;
+
+    background:
+        rgba(255,255,255,0.025);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
+
+/* ---------------------------------------------------------
+   Description
+   --------------------------------------------------------- */
 
 .project-description {
     position: absolute;
 
     left: 30px;
     right: 30px;
-    bottom: 30px;
+    bottom: 65px;
+
+    z-index: 5;
 
     max-width: 470px;
 
-    color: rgba(255,255,255,0.6);
+    margin: 0;
+
+    color:
+        rgba(255,255,255,0.6);
 
     font-size: 13px;
 
     line-height: 1.6;
 }
 
+/* ---------------------------------------------------------
+   Details
+   --------------------------------------------------------- */
+
+.project-details {
+    position: absolute;
+
+    left: 30px;
+    bottom: 30px;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.project-details span {
+    padding: 6px 9px;
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    border-radius: 999px;
+
+    color:
+        rgba(255,255,255,0.42);
+
+    background:
+        rgba(255,255,255,0.025);
+
+    font-size: 9px;
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+}
+
+/* ---------------------------------------------------------
+   Project link
+   --------------------------------------------------------- */
+
+.project-link {
+    position: absolute;
+
+    right: 30px;
+    bottom: 30px;
+
+    z-index: 6;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: white;
+
+    font-size: 9px;
+
+    letter-spacing: 0.14em;
+
+    text-decoration: none;
+
+    opacity: 0;
+
+    transform: translateY(8px);
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s var(--ease);
+}
+
+.project-card:hover .project-link {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.project-link span:last-child {
+    font-size: 15px;
+
+    transition:
+        transform 0.4s var(--ease);
+}
+
+.project-link:hover span:last-child {
+    transform: translate(3px, -3px);
+}
+
+/* ---------------------------------------------------------
+   Footer
+   --------------------------------------------------------- */
+
 .projects-footer {
     display: flex;
 
+    align-items: center;
     justify-content: space-between;
 
     margin-top: 70px;
@@ -225,4 +527,109 @@
     color: var(--accent-2);
 
     font-size: 16px;
+
+    transition:
+        transform 0.5s var(--ease);
+}
+
+.projects-footer:hover .footer-arrow {
+    transform: translateY(5px);
+}
+
+/* ---------------------------------------------------------
+   Responsive
+   --------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .project-card,
+    .project-card--featured {
+        min-height: 620px;
+    }
+
+    .project-card:nth-child(2) {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 600px) {
+
+    #games {
+        padding: 110px 0 130px;
+    }
+
+    .projects-heading {
+        margin-top: 55px;
+    }
+
+    .projects-grid {
+        margin-top: 65px;
+    }
+
+    .project-card,
+    .project-card--featured {
+        min-height: 560px;
+
+        border-radius: 22px;
+    }
+
+    .project-info {
+        left: 22px;
+        right: 22px;
+        bottom: 120px;
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 14px;
+    }
+
+    .project-info h3 {
+        font-size: 36px;
+    }
+
+    .project-description {
+        left: 22px;
+        right: 22px;
+        bottom: 62px;
+
+        font-size: 12px;
+    }
+
+    .project-details {
+        left: 22px;
+        bottom: 25px;
+    }
+
+    .project-link {
+        right: 22px;
+        bottom: 25px;
+    }
+
+    .project-number {
+        top: 20px;
+        left: 20px;
+    }
+
+    .project-open {
+        top: 20px;
+        right: 20px;
+    }
+
+    .project-status {
+        font-size: 9px;
+    }
+
+    .projects-footer {
+        margin-top: 50px;
+
+        font-size: 8px;
+    }
 }
